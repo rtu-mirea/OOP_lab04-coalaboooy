@@ -18,7 +18,7 @@ public class Main {
     private static void Ex1() throws IOException {
 
         //Создание файла в корневом каталоге
-        File MyFile1 = new File("MyFile1.txt");
+        File MyFile1 = new File("MyFile1.bin");
         MyFile1.createNewFile();
         if (MyFile1.exists())
             System.out.println("Файл " + MyFile1.getName() + " создан успешно");
@@ -29,7 +29,7 @@ public class Main {
         String sep = File.separator;
         String absolutePath = "C:" + sep + "Users" + sep + "Александр" + sep + "Desktop" + sep + "Учеба" + sep +
                 "ООП" + sep + "Sem1" + sep + "LAB_№4";
-        File MyFile2 = new File(absolutePath, "MyFile2.txt");
+        File MyFile2 = new File(absolutePath, "MyFile2.bin");
         MyFile2.createNewFile();
         if (MyFile2.exists())
             System.out.println("Файл " + MyFile2.getName() + " создан успешно");
@@ -37,7 +37,7 @@ public class Main {
             System.out.println("Ошибка, файл не создан!");
 
         //Создание файла в папке без абсолютного пути
-        File MyFile3 = new File("C:\\JavaProgs", "MyFile3.txt");
+        File MyFile3 = new File("C:\\JavaProgs", "MyFile3.bin");
         MyFile3.createNewFile();
         if (MyFile3.exists())
             System.out.println("Файл " + MyFile3.getName() + " создан успешно");
@@ -90,24 +90,23 @@ public class Main {
         //Вывод имен файлов
         System.out.println("Список файлов в папке приложения " + Arrays.toString(MyDir2.getParentFile().list()));
 
-        //Вывод файловс путями и подсчет папок
+        //Вывод файлов с путями и подсчет папок
         File[] files = MyDir2.getParentFile().listFiles();
         assert files != null;
         int dirCounter = 0;
-        for (int i = 0; i < files.length; i++) {
-            if (files[i].isDirectory()) {
-                System.out.println(files[i].getAbsolutePath() + " - папка");
+        for (File file : files) {
+            if (file.isDirectory()) {
+                System.out.println(file.getAbsolutePath() + " - папка");
                 dirCounter++;
-            }
-            else
-                System.out.println(files[i].getAbsolutePath() + " - файл");
+            } else
+                System.out.println(file.getAbsolutePath() + " - файл");
         }
         System.out.println("В папке приложения " + dirCounter + " папок");
 
         //Удаление
         System.out.println("\nНажмите ENTER, чтобы удалить все созданные папки и файлы");
         Scanner wait = new Scanner(System.in);
-        String quit = wait.nextLine();
+        wait.nextLine();
         f1.delete();
         f2.delete();
         f3.delete();

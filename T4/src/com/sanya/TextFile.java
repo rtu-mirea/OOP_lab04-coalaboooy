@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 class TextFile {
-    private String filePath = "C:\\Users\\Александр\\Desktop\\Учеба\\ООП\\Sem1\\LAB_№4\\T4\\Raw data file.txt";
+    private String filePath = "C:\\Users\\Александр\\Desktop\\Учеба\\ООП\\Sem1\\LAB_№4\\T4\\Raw data file.bin";
 
     //Конструктор
     TextFile (String filePath) {

@@ -13,7 +13,7 @@ class FileManager {
 
         //Создание файла для записи
         System.out.println("Enter file name:");
-        File output = new File(String.format("%s.txt", in.nextLine()));
+        File output = new File(String.format("%s.bin", in.nextLine()));
         output.createNewFile();
         System.out.println(String.format("\"File named %s exists\" is %b", output.getName(), output.exists()));
         return output;
@@ -73,7 +73,7 @@ class FileManager {
 
     static File makeNewTestsFile(File source) throws IOException {
         //Создание нового файла для хранения нового, отсортированного списка
-        File destination = new File(source.getName().replace(".txt", "")+"_Sorted.txt");
+        File destination = new File(source.getName().replace(".bin", "")+"_Sorted.bin");
         destination.createNewFile();
 
         //Создание потоков для чтения и записи

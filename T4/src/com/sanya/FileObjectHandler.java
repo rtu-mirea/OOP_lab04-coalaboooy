@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class FileObjectHandler {
-    private String filePath = "C:\\Users\\Александр\\Desktop\\Учеба\\ООП\\Sem1\\LAB_№4\\T4\\Serialized object.txt";
-    private String fileCollectionPath = "C:\\Users\\Александр\\Desktop\\Учеба\\ООП\\Sem1\\LAB_№4\\T4\\Serialized collection.txt";
+    private String filePath = "C:\\Users\\Александр\\Desktop\\Учеба\\ООП\\Sem1\\LAB_№4\\T4\\Serialized object.bin";
+    private String fileCollectionPath = "C:\\Users\\Александр\\Desktop\\Учеба\\ООП\\Sem1\\LAB_№4\\T4\\Serialized collection.bin";
     private ArrayList<Test> testsList = new ArrayList<>();
 
     FileObjectHandler (String filePath) {
@@ -52,6 +52,7 @@ class FileObjectHandler {
         //Проверка
         System.out.println("Info about a test: "+input.getLevel()+" "+input.getTestNumber()+" "+input.getNumberOfQuestions()
                 +" "+input.getMaximumPoints()+" "+input.getTheme());
+        in.close();
     }
 
     void addToCollection() {
@@ -95,6 +96,7 @@ class FileObjectHandler {
         int pts;
 
         //Чтение и добавление в коллекцию
+        testsList.clear();
         while(true) {
             try {
                 pts = in.readInt();

@@ -61,7 +61,8 @@ public class Main {
                 ("C:\\Users\\Александр\\Desktop\\Учеба\\ООП\\Sem1\\LAB_№4\\T3\\src\\R.txt"),"Cp1251"));
 
         //Считывание файла
-        System.out.println(in.readLine()+"\nОшибка, символы в файле используют другую кодировку, повторим считывание с правильной кодировкой:");
+        String line = in.readLine();
+        System.out.println(line+"\nОшибка, символы в файле используют другую кодировку, повторим считывание с правильной кодировкой:");
 
         //Закрытие потока
         in.close();
@@ -71,9 +72,12 @@ public class Main {
                 ("C:\\Users\\Александр\\Desktop\\Учеба\\ООП\\Sem1\\LAB_№4\\T3\\src\\R.txt"), StandardCharsets.UTF_8));
 
         //Считывание файла c правильной кодировкой
-        System.out.println(in.readLine()+"\nТеперь считанные символы выводятся правильно");
+        line = in.readLine();
+        System.out.println(line+"\nТеперь считанные символы выводятся правильно");
 
         //Закрытие потока
         in.close();
+
+        System.out.println("В файле text.txt, созданном с помощью проводника используется кодировка UTF-8");
     }
 }
